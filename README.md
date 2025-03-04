@@ -35,7 +35,7 @@ This project implements **deep learning models** to classify and localize lung d
 
 ---
 
-# 🚀 Results  
+## 🚀 Results  
 
 | Task           | Model            | Performance  |
 |---------------|-----------------|-------------|
@@ -45,6 +45,53 @@ This project implements **deep learning models** to classify and localize lung d
 ![Classification Result 1](Images/classification%20Results.png)
 ![Classification Result 2](Images/Classification%20results%202.png)
 
+---
+
+## 🔧 Implementation Steps  
+
+### 1️⃣ **Data Collection and Preprocessing**  
+- Download datasets: **ChestX-ray14, MIMIC-CXR, and VinDR-CXR**  
+- Resize images (**224x224** for ConvNeXt, **1024x1024** for Swin Transformer)  
+- Normalize pixel values between **0 and 1** for model training  
+- Convert labels into **multi-hot encoding** (classification) and **bounding boxes** (localization)  
+- Split into **training, validation, and test sets**  
+
+---
+
+### 2️⃣ **Model Selection and Architecture**  
+#### 🔹 **Classification: ConvNeXt**  
+- Uses **CNN-based residual blocks** for **multi-label classification**  
+- Key modifications:  
+  ✅ **Global Average Pooling Layer** – Reduces dimensionality  
+  ✅ **Fully Connected Layer (ReLU activation)** – Enhances feature learning  
+  ✅ **Dropout Layer** – Prevents overfitting  
+  ✅ **Sigmoid Activation** – Outputs probability for each disease  
+
+#### 🔹 **Localization: Swin Transformer**  
+- **Hierarchical transformer-based model** for spatial feature extraction  
+- Implements **shifted window attention mechanism** for better context awareness  
+- Trained within a **Mask R-CNN framework** for **bounding-box localization**  
+
+---
+
+### 3️⃣ **Model Training and Hyperparameter Tuning**  
+- **Optimizer**: **AdamW** for efficient weight updates  
+- **Loss functions**:  
+  🔹 **BCEWithLogitsLoss** – Classification  
+  🔹 **IoU Loss** – Localization  
+- **Training Hyperparameters**:  
+  🔹 **Batch size** = 32  
+  🔹 **Learning rate** = 0.0001  
+  🔹 **Epochs** = 20 (Classification), **50+** (Localization)  
+- **Regularization Techniques**:  
+  🔹 **Dropout layers**  
+  🔹 **Data augmentation** (rotation, scaling, flipping)  
+
+---
+
+### 4️⃣ **Model Evaluation and Performance Metrics**  
+- **Classification (ConvNeXt)**: Evaluated using **AUC (Area Under the Curve)** – **80.11% AUC**  
+- **Localization (Swin Transformer)**: Evaluated using **Intersection over Union (IoU)** – **79% IoU**  
 ---
 
 ## 📊 Performance Metrics  
