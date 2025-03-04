@@ -28,7 +28,7 @@ This project implements **deep learning models** to classify and localize lung d
 - Achieved **80.11% AUC** on the test set  
 
 ### 🏥 **2️⃣ Localization: Swin Transformer**  
-![Swin Transformer Architecture](Images/Swin%20Transformer.png)
+![Swin Transformer Architecture](Images/Swin_Transformer.png)
 - A **hierarchical vision transformer** that captures spatial relationships  
 - Trained on **VinDR-CXR** dataset for disease localization  
 - Achieved **79% Intersection over Union (IoU)** in identifying diseased regions  
