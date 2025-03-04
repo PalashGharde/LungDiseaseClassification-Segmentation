@@ -22,11 +22,13 @@ This project implements **deep learning models** to classify and localize lung d
 ## 🏗 Model Architectures  
 
 ### 🏥 **1️⃣ Classification: ConvNeXt**  
+![ConvNeXt Architecture](Images/ConvNext.png)
 - A modern **CNN-based model** with residual connections and **layer normalization**  
 - Trained on **ChestX-ray14** dataset to classify **14 lung diseases**  
 - Achieved **80.11% AUC** on the test set  
 
 ### 🏥 **2️⃣ Localization: Swin Transformer**  
+![Swin Transformer Architecture](Images/Swin%20Transformer.png)
 - A **hierarchical vision transformer** that captures spatial relationships  
 - Trained on **VinDR-CXR** dataset for disease localization  
 - Achieved **79% Intersection over Union (IoU)** in identifying diseased regions  
@@ -39,6 +41,9 @@ This project implements **deep learning models** to classify and localize lung d
 |---------------|-----------------|-------------|
 | Classification | ConvNeXt         | 80.11% AUC  |
 | Localization  | Swin Transformer | 79% IoU     |
+
+![Classification Result 1](Images/classification%20Results.png)
+![Classification Result 2](Images/Classification%20results%202.png)
 
 ---
 
